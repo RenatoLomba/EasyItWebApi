@@ -11,6 +11,7 @@ namespace Domain.Interfaces.AppServicesInterfaces
         Task<ServiceDTOSimpleResult> Get(Guid id);
         Task<ServiceDTOCompleteResult> GetCompleteById(Guid id);
         Task<ServiceDTOSimpleResult> GetByCode(string codigo);
+        Task<IEnumerable<ServiceDTOSearchResult>> GetByName(string name, int qtd, string order);
         Task<IEnumerable<ServiceDTOSimpleResult>> GetAll();
         Task<ServiceDTOSimpleResult> Post(ServiceDTOCreate service);
         //Task<MunicipioDTO> Put(MunicipioDTOEntry municipio);

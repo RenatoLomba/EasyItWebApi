@@ -105,6 +105,27 @@ namespace Application.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+        [Authorize("Bearer", Roles = "User")]
+        [HttpGet("{name}/{qtd}/{order}")]
+        public async Task<ActionResult> Name(string name, int qtd, string order = "default")
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var result = await _service.GetByName(name, qtd, order);
+                if (result != null)
+                    return Ok(result);
+                else
+                    return NotFound("Serviço não encontrado");
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
         #endregion
 
         #region CREATE

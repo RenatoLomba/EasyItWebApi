@@ -45,6 +45,12 @@ namespace Services.AppServices
             return _mapper.Map<ServiceDTOSimpleResult>(result);
         }
 
+        public async Task<IEnumerable<ServiceDTOSearchResult>> GetByName(string name, int qtd, string order)
+        {
+            var result = await _serviceRepository.SearchAsync(name, qtd, order);
+            return _mapper.Map<IEnumerable<ServiceDTOSearchResult>>(result);
+        }
+
         public async Task<ServiceDTOCompleteResult> GetCompleteById(Guid id)
         {
             var result = await _serviceRepository.SelectComplete(id);

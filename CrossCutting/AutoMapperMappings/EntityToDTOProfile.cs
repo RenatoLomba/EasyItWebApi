@@ -27,6 +27,7 @@ namespace CrossCutting.AutoMapperMappings
 
             CreateMap<ServiceEntity, ServiceDTOSimpleResult>().ReverseMap();
             CreateMap<ServiceEntity, ServiceDTOCompleteResult>().ReverseMap();
+            CreateMap<ServiceEntity, ServiceDTOSearchResult>().ReverseMap();
 
             CreateMap<PhotoEntity, PhotoDTOSimpleResult>().ReverseMap();
 
