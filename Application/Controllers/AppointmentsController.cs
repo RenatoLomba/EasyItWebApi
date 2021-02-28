@@ -100,7 +100,7 @@ namespace Application.Controllers
         #endregion
 
         #region DELETE
-        [Authorize("Bearer", Roles = "Administrator")]
+        [Authorize("Bearer", Roles = "User")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(Guid id)
         {
