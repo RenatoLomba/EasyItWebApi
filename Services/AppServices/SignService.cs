@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Domain.DTOs.AppointmentDTOs;
+using Domain.DTOs.FavoritesDTOs;
 using Domain.DTOs.TestimonialDTOs;
 using Domain.DTOs.TokenDTOs;
 using Domain.DTOs.UserDTOs;
@@ -138,6 +139,7 @@ namespace Services.AppServices
                 Avatar = user.Avatar,
                 Appointments = _mapper.Map<IEnumerable<AppointmentDTOSimpleResult>>(user.Appointments),
                 Testimonials = _mapper.Map<IEnumerable<TestimonialDTOSimpleResult>>(user.Testimonials),
+                Favorites = _mapper.Map<IEnumerable<FavoritesDTOSimpleResult>>(user.Favorites),
                 Token = new TokenDTO
                 {
                     Authenticated = true,
