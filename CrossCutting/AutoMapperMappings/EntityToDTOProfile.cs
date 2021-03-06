@@ -6,6 +6,7 @@ using Domain.DTOs.AppointmentDTOs;
 using Domain.DTOs.AvailableDateDTOs;
 using Domain.DTOs.AvailableHourDTOs;
 using Domain.DTOs.ExpertDTOs;
+using Domain.DTOs.FavoritesDTOs;
 using Domain.DTOs.PhotoDTOs;
 using Domain.DTOs.ServiceDTOs;
 using Domain.DTOs.TestimonialDTOs;
@@ -39,6 +40,8 @@ namespace CrossCutting.AutoMapperMappings
             CreateMap<AvailableHourEntity, AvailableHourDTOSimpleResult>().ReverseMap();
 
             CreateMap<AppointmentEntity, AppointmentDTOSimpleResult>().ReverseMap();
+
+            CreateMap<FavoritesEntity, FavoritesDTOSimpleResult>().ReverseMap();
         }
     }
 }

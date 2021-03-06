@@ -23,6 +23,7 @@ namespace Data.Context
             modelBuilder.Entity<AppointmentEntity>(new AppointmentMap().Configure);
             modelBuilder.Entity<AvailableDateEntity>(new AvailableDateMap().Configure);
             modelBuilder.Entity<AvailableHourEntity>(new AvailableHourMap().Configure);
+            modelBuilder.Entity<FavoritesEntity>(new FavoritesMap().Configure);
 
             UserSeed.Users(modelBuilder);
             //ExpertSeed.Experts(modelBuilder);
@@ -36,5 +37,6 @@ namespace Data.Context
         public DbSet<AppointmentEntity> Appointments { get; set; }
         public DbSet<AvailableDateEntity> AvailableDates { get; set; }
         public DbSet<AvailableHourEntity> AvailableHours { get; set; }
+        public DbSet<FavoritesEntity> Favorites { get; set; }
     }
 }

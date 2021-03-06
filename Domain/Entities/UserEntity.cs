@@ -13,5 +13,6 @@ namespace Domain.Entities
         public string Avatar { get; set; }
         public IEnumerable<TestimonialEntity> Testimonials { get; set; }
         public IEnumerable<AppointmentEntity> Appointments { get; set; }
+        public IEnumerable<FavoritesEntity> Favorites { get; set; }
     }
 }

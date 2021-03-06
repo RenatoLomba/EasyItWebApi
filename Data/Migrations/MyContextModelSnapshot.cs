@@ -26,7 +26,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 384, DateTimeKind.Utc).AddTicks(6131));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 522, DateTimeKind.Utc).AddTicks(2549));
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("DATETIME");
@@ -66,7 +66,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 387, DateTimeKind.Utc).AddTicks(6800));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 524, DateTimeKind.Utc).AddTicks(6622));
 
                     b.Property<int>("Day")
                         .HasColumnType("INT");
@@ -105,7 +105,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 390, DateTimeKind.Utc).AddTicks(6437));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 526, DateTimeKind.Utc).AddTicks(9270));
 
                     b.Property<int>("Hour")
                         .HasColumnType("INT");
@@ -139,7 +139,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 367, DateTimeKind.Utc).AddTicks(1575));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 511, DateTimeKind.Utc).AddTicks(371));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -180,6 +180,38 @@ namespace Data.Migrations
                     b.ToTable("Expert");
                 });
 
+            modelBuilder.Entity("Domain.Entities.FavoritesEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("CreateAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("DATETIME")
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 528, DateTimeKind.Utc).AddTicks(9088));
+
+                    b.Property<Guid>("ExpertId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExpertId");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Favorites");
+                });
+
             modelBuilder.Entity("Domain.Entities.PhotoEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -189,7 +221,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 376, DateTimeKind.Utc).AddTicks(4976));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 517, DateTimeKind.Utc).AddTicks(2295));
 
                     b.Property<Guid>("ExpertId")
                         .HasColumnType("char(36)");
@@ -231,7 +263,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 370, DateTimeKind.Utc).AddTicks(4737));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 513, DateTimeKind.Utc).AddTicks(712));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -271,7 +303,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 379, DateTimeKind.Utc).AddTicks(6019));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 519, DateTimeKind.Utc).AddTicks(1875));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -315,7 +347,7 @@ namespace Data.Migrations
                     b.Property<DateTime?>("CreateAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2021, 2, 20, 16, 15, 32, 364, DateTimeKind.Utc).AddTicks(2678));
+                        .HasDefaultValue(new DateTime(2021, 3, 6, 12, 53, 50, 509, DateTimeKind.Utc).AddTicks(854));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -351,9 +383,9 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f72bb172-3859-4a53-9072-a44edbae7377"),
+                            Id = new Guid("28fb11be-e9ad-48e4-b05c-09a10b297cec"),
                             Avatar = "C:/Users/adm/Documents/GitHub/EasyIt/EasyItMobileApp/src/avatars/admAvatar.png",
-                            CreateAt = new DateTime(2021, 2, 20, 16, 15, 32, 392, DateTimeKind.Utc).AddTicks(5026),
+                            CreateAt = new DateTime(2021, 3, 6, 12, 53, 50, 530, DateTimeKind.Utc).AddTicks(4909),
                             Email = "adm@root.com",
                             Name = "Administrador",
                             Password = "mudar123",
@@ -396,6 +428,21 @@ namespace Data.Migrations
                     b.HasOne("Domain.Entities.AvailableDateEntity", "AvailableDate")
                         .WithMany("AvailableHours")
                         .HasForeignKey("AvailableDateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Entities.FavoritesEntity", b =>
+                {
+                    b.HasOne("Domain.Entities.ExpertEntity", "Expert")
+                        .WithMany("Favorites")
+                        .HasForeignKey("ExpertId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.UserEntity", "User")
+                        .WithMany("Favorites")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

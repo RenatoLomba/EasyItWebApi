@@ -18,5 +18,6 @@ namespace Domain.Entities
         public IEnumerable<TestimonialEntity> Testimonials { get; set; }
         public IEnumerable<AppointmentEntity> Appointments { get; set; }
         public IEnumerable<AvailableDateEntity> AvailableDates { get; set; }
+        public IEnumerable<FavoritesEntity> Favorites { get; set; }
     }
 }

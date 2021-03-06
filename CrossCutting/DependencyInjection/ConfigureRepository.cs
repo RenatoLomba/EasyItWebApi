@@ -19,6 +19,7 @@ namespace CrossCutting.DependencyInjection
             serviceCollection.AddScoped(typeof(IAvailableDateRepository), typeof(AvailableDateRepository));
             serviceCollection.AddScoped(typeof(IAvailableHourRepository), typeof(AvailableHourRepository));
             serviceCollection.AddScoped(typeof(IAppointmentRepository), typeof(AppointmentRepository));
+            serviceCollection.AddScoped(typeof(IFavoritesRepository), typeof(FavoritesRepository));
         }
     }
 }

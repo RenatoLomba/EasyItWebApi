@@ -19,6 +19,7 @@ namespace CrossCutting.DependencyInjection
             serviceCollection.AddTransient<ITestimonialService, TestimonialService>();
             serviceCollection.AddTransient<IAvailableDateService, AvailableDateService>();
             serviceCollection.AddTransient<IAppointmentService, AppointmentService>();
+            serviceCollection.AddTransient<IFavoritesService, FavoritesService>();
         }
     }
 }

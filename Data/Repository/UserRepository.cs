@@ -36,6 +36,7 @@ namespace Data.Repository
                 return await _dataset
                     .Include(u => u.Testimonials)
                     .Include(u => u.Appointments).ThenInclude(a => a.Service)
+                    .Include(u => u.Favorites).ThenInclude(f => f.Expert)
                     .SingleOrDefaultAsync(u => u.Id.Equals(id));
             }
             catch (Exception ex)

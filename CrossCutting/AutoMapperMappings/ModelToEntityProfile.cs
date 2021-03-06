@@ -19,6 +19,7 @@ namespace CrossCutting.AutoMapperMappings
             CreateMap<AvailableDateModel, AvailableDateEntity>().ReverseMap();
             CreateMap<AvailableHourModel, AvailableHourEntity>().ReverseMap();
             CreateMap<AppointmentModel, AppointmentEntity>().ReverseMap();
+            CreateMap<FavoritesModel, FavoritesEntity>().ReverseMap();
         }
     }
 }
