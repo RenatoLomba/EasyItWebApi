@@ -30,7 +30,8 @@ namespace Services.AppServices
             model.Date = new DateTime(appointment.DateInfo.Year, appointment.DateInfo.Month, appointment.DateInfo.Day, appointment.DateInfo.Hour, appointment.DateInfo.Minutes, 0);
             var result = await _rep.InsertAsync(_mapper.Map<AppointmentEntity>(model));
             var deleteHour = result != null ? await _hourRep.DeleteAsync(appointment.DateInfo.AvailableHourId) : false;
-            return deleteHour ? _mapper.Map<AppointmentDTOSimpleResult>(result) : null;
+            var appointmentCreated = await _rep.SelectCompleteAsync(result.Id);
+            return deleteHour ? _mapper.Map<AppointmentDTOSimpleResult>(appointmentCreated) : null;
         }
 
         public async Task<bool> Delete(Guid id)

@@ -28,5 +28,18 @@ namespace Data.Repository
                 throw ex;
             }
         }
+
+        public async Task<FavoritesEntity> SelectCompleteAsync(Guid id)
+        {
+            try
+            {
+                var result = await _dataSet.Include(f => f.Expert).FirstOrDefaultAsync(f => f.Id.Equals(id));
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

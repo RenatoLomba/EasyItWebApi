@@ -9,5 +9,6 @@ namespace Domain.Interfaces.RepositoryInterfaces
     public interface IFavoritesRepository : IRepository<FavoritesEntity>
     {
         Task<FavoritesEntity> SelectAsync(Guid userId, Guid expertId);
+        Task<FavoritesEntity> SelectCompleteAsync(Guid id);
     }
 }

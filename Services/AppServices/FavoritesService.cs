@@ -25,7 +25,8 @@ namespace Services.AppServices
         {
             var model = _mapper.Map<FavoritesModel>(favorite);
             var result = await _repository.InsertAsync(_mapper.Map<FavoritesEntity>(model));
-            return _mapper.Map<FavoritesDTOSimpleResult>(result);
+            var favoriteCreated = await _repository.SelectCompleteAsync(result.Id);
+            return _mapper.Map<FavoritesDTOSimpleResult>(favoriteCreated);
         }
 
         public async Task<bool> Delete(Guid id)
