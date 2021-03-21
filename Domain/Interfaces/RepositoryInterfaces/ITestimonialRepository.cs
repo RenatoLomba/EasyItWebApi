@@ -9,5 +9,6 @@ namespace Domain.Interfaces.RepositoryInterfaces
     public interface ITestimonialRepository : IRepository<TestimonialEntity>
     {
         public Task<TestimonialEntity> SelectCompleteAsync(Guid id);
+        public Task<IEnumerable<TestimonialEntity>> SelectByExpertAsync(Guid expertId);
     }
 }

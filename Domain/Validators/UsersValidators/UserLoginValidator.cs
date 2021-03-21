@@ -11,7 +11,7 @@ namespace Domain.Validators.UsersValidators
         public UserLoginValidator()
         {
             RuleFor(u => u.Email).NotNull().NotEqual("foo").NotEmpty().EmailAddress().MaximumLength(50);
-            RuleFor(u => u.Password).NotNull().NotEqual("foo").NotEmpty().MaximumLength(50);
+            RuleFor(u => u.Password).NotNull().NotEqual("foo").NotEmpty().MaximumLength(200);
         }
     }
 }

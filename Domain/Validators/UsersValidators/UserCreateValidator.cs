@@ -12,7 +12,7 @@ namespace Domain.Validators.UsersValidators
         {
             RuleFor(u => u.Name).NotNull().NotEqual("foo").NotEmpty().MaximumLength(50);
             RuleFor(u => u.Email).NotNull().NotEqual("foo").NotEmpty().EmailAddress().MaximumLength(50);
-            RuleFor(u => u.Password).NotNull().NotEqual("foo").NotEmpty().MaximumLength(50);
+            RuleFor(u => u.Password).NotNull().NotEqual("foo").NotEmpty().MaximumLength(200);
             RuleFor(u => u.Avatar).NotEqual("foo").MaximumLength(500);
         }
     }

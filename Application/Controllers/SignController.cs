@@ -26,19 +26,22 @@ namespace Application.Controllers
         #region SIGN IN
         [AllowAnonymous]
         [HttpPost]
-        public async Task<object> SignIn(UserDTOLogin login)
+        public async Task<object> SignIn(UserDTOLogin login, bool authenticated = false)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            UserLoginValidator validator = new UserLoginValidator();
-            ValidationResult valResult = await validator.ValidateAsync(login);
-            if(!valResult.IsValid)
-                return BadRequest(valResult.ToString(" "));
+            if(!authenticated)
+            {
+                UserLoginValidator validator = new UserLoginValidator();
+                ValidationResult valResult = await validator.ValidateAsync(login);
+                if (!valResult.IsValid)
+                    return BadRequest(valResult.ToString(" "));
+            }
 
             try
             {
-                var result = await _signService.SignInService(login);
+                var result = await _signService.SignInService(login, authenticated);
 
                 if (result != null)
                     return Ok(result);

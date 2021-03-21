@@ -6,12 +6,3 @@ C:\Users\adm\Documents\GitHub\EasyIt\EasyItWebAPI\Domain\obj\Debug\netcoreapp3.1
 C:\Users\adm\Documents\GitHub\EasyIt\EasyItWebAPI\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 C:\Users\adm\Documents\GitHub\EasyIt\EasyItWebAPI\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 C:\Users\adm\Documents\GitHub\EasyIt\EasyItWebAPI\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\bin\Debug\netcoreapp3.1\Domain.dll
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\obj\Debug\netcoreapp3.1\Domain.dll
-C:\Users\adm\Documents\GitHub\EasyItWebApi\Domain\obj\Debug\netcoreapp3.1\Domain.pdb

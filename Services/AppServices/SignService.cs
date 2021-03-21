@@ -38,20 +38,23 @@ namespace Services.AppServices
             _config = configuration;
         }
 
-        public async Task<object> SignInService(UserDTOLogin login)
+        public async Task<object> SignInService(UserDTOLogin login, bool authenticated)
         {
             var user = await _userRepository.SelectCompleteAsync(login.Email);
 
             if (user == null)
                 return null;
 
-            if (!BCrypt.Net.BCrypt.Verify(login.Password, user.Password))
+            if(!authenticated)
             {
-                return new TokenDTO
+                if (!BCrypt.Net.BCrypt.Verify(login.Password, user.Password))
                 {
-                    Authenticated = false,
-                    Message = "Senha de usuário incorreta"
-                };
+                    return new TokenDTO
+                    {
+                        Authenticated = false,
+                        Message = "Senha de usuário incorreta"
+                    };
+                }
             }
 
             var identity = new ClaimsIdentity(

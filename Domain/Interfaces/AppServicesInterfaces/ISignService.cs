@@ -8,7 +8,7 @@ namespace Domain.Interfaces.AppServicesInterfaces
 {
     public interface ISignService
     {
-        Task<object> SignInService(UserDTOLogin email);
+        Task<object> SignInService(UserDTOLogin email, bool authenticated);
 
         Task<object> SignUpService(UserDTOCreate user);
     }
